@@ -16,4 +16,4 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       working-directory: ./src
-      run: docker build . --file Docker.Dns/Dockerfile --tag docker-dns:0.0.${{github.run.number}}
+      run: docker build . --file Docker.Dns/Dockerfile --tag docker-dns:0.0.$GITHUB_RUN_NUMBER
