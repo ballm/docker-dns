@@ -11,9 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+        
+    - uses: actions/checkout@v3
     
     - name: Build the Docker image
-      uses: actions/checkout@v3
       working-directory: ./src
       run: docker build . --file Docker.Dns/Dockerfile --tag docker-dns:0.0.$GITHUB_RUN_NUMBER
     
@@ -31,15 +32,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Login to Docker Hub
+      -   
+        name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
-      - name: Tag Docker Image
+       
+      - 
+        name: Tag Docker Image
         run: docker tag docker-dns:0.0.$GITHUB_RUN_NUMBER ${{ secrets.DOCKERHUB_USERNAME }}/docker-dns:0.0.$GITHUB_RUN_NUMBER
-        
-      - name: Push to DockerHub
+      
+      -
+        name: Push to DockerHub
         run: docker push ${{ secrets.DOCKERHUB_USERNAME/docker-dns:0.0.$GITHUB_RUN_NUMBER
