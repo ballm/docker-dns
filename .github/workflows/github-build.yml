@@ -17,3 +17,14 @@ jobs:
     - name: Build the Docker image
       working-directory: ./src
       run: docker build . --file Docker.Dns/Dockerfile --tag docker-dns:0.0.$GITHUB_RUN_NUMBER
+    
+    - name: create tag
+      uses: actions/github-script@v5
+      with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/build-0.0.$GITHUB_RUN_NUMBER',
+              sha: context.sha
+            })
