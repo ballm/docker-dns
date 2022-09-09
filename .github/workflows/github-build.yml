@@ -25,6 +25,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: `refs/tags/build-0.0.${{env.GITHUB_RUN_NUMBER}}`,
+              ref: `refs/tags/build-0.0.${context.runNumber}`,
               sha: context.sha
             })
