@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  Docker.Dns:
+    container_name: "docker.dns"
+    image: ${DOCKER_REGISTRY-}docker.dns
+    build:
+      context: .
+      dockerfile: ../Docker.Dns/Dockerfile
+    ports:
+      - "53:53/udp"

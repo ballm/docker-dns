@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  Docker.Dns:
+    environment:
+      - DNS__RECORDS__A=random.docker:1.2.3.4,*.docker:127.0.0.1
+      - DOTNET_ENVIRONMENT=Development
