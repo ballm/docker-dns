@@ -39,4 +39,6 @@ jobs:
         docker tag docker-dns:0.0.$GITHUB_RUN_NUMBER ${{ secrets.DOCKERHUB_USERNAME }}/docker-dns:latest
       
     - name: Push to DockerHub
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/docker-dns:0.0.$GITHUB_RUN_NUMBER
+      run: |
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/docker-dns:0.0.$GITHUB_RUN_NUMBER
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/docker-dns:latest
