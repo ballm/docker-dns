@@ -6,6 +6,7 @@
 		<ProjectGuid>8e6fd309-4784-47d4-8e34-20dc48bb7139</ProjectGuid>
 		<DockerServiceName>docker.dns</DockerServiceName>
 		<DockerComposeProjectName>docker-dns</DockerComposeProjectName>
+		<DockerDevelopmentMode>Regular</DockerDevelopmentMode>
 	</PropertyGroup>
 	<ItemGroup>
 		<None Include="docker-compose.override.yml">
