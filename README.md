@@ -1,6 +1,6 @@
 # Docker DNS
 
-A DNS Server written in C# targeting .NET 6.0 that runs in Docker.
+A DNS Server written in C# targeting .NET 8.0 that runs in Docker.
 
 [![Docker Image CI](https://github.com/ballm/docker-dns/actions/workflows/github-build.yml/badge.svg)](https://github.com/ballm/docker-dns/actions/workflows/github-build.yml)
 
